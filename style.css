@@ -1,0 +1,591 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: black;
+}
+
+body, #description, .gameInfo {
+    margin: 0 auto;
+}
+
+body {
+    background: url(images/pool.jpg) repeat-y fixed top;
+    background-size: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+    font-size: 0;
+}
+
+body, input  {
+    text-align: center;
+}
+
+.button {
+    font-size: 66px;
+}
+
+#round, #message {
+    font-size: 52px;
+}
+
+.info {
+    font-size: 32px;
+}
+
+.row {
+    background-color: darkgreen;
+    font-size: 80px;
+}
+
+
+.logo {
+    width: 80%;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.block, .corner, .row, #begin, #bank, #spin, #points, #pointsTotal, #solvePuzzle, .key, .space {
+    display: inline-block;
+}
+
+.block, .corner, #begin:active, #spin:active, #solvePuzzle:active {
+    position: relative;
+}
+
+.align {
+    transform: scaleX(0.8);
+}
+
+.align, input, #solvePuzzle, .input, .modal, #description, #keyboard {
+    font-weight: bold;
+}
+
+.row, .corner {
+    margin: 0;
+}
+
+.corner {
+    width: 94px;
+    height: 114px;
+    line-height: 0;
+}
+
+.block {
+    width: 80px;
+    height: 100px;
+    margin: 0 2px;
+    line-height: 90px;
+    border: 5px outset rgb(24, 24, 24);
+    background: radial-gradient(circle, lime, darkgreen);
+}
+
+.block, .align, #solvePuzzle {
+    vertical-align: middle;
+}
+
+#row1, #row2, #blockTopLeft, #blockTopRight, #solveInput {
+    vertical-align: bottom;
+}
+
+#row3, #row4, #blockBottomRight, #blockBottomLeft {
+    vertical-align: top;
+}
+
+#blockTopLeft, #blockTopRight, #row4 {
+    border-bottom: 10px solid cyan;
+}
+
+#blockBottomRight, #blockBottomLeft, #row1 {
+    border-top: 10px solid cyan;
+}
+
+#blockTopRight, #blockBottomRight, #row2, #row3 {
+    border-left: 10px solid cyan;
+}
+
+#blockBottomLeft, #blockTopLeft, #row2, #row3 {
+    border-right: 10px solid cyan;
+}
+
+#row2 {
+    padding-bottom: 2px;
+}
+
+#row3 {
+    padding-top: 2px;
+}
+
+#row1, #row2 {
+    padding-top: 4px;
+}
+
+#row3, #row4 {
+    padding-bottom: 4px;
+}
+
+#block0, #block12, #block26, #block40 {
+    margin-left: 4px;
+}
+
+#block11, #block25, #block39, #block51 {
+    margin-right: 4px;
+}
+
+.modal {
+    margin: 10px auto 0;
+    padding: 20px 0;
+}
+
+.modal div {
+    margin: 10px auto;
+}
+
+.input, .modal, .newLine, .mainImage, .keyrow {
+    display: block;
+}
+
+.input, .modal, #description {
+    border: 10px solid cyan;
+}
+
+.gameInfo, .modal, #description, .input {
+    max-width: 672px;
+    text-shadow: 6px 3px 8px black;
+    background: radial-gradient(rgba(0, 0, 0, 0), #43759f);
+}
+
+.modal, #begin, #spin, #solvePuzzle, .key {
+    border-radius: 8px;
+}
+
+#description, .input {
+    padding: 10px 0;
+    font-size: 56px;
+    width: 100%;
+}
+
+.input, #description {
+    border-top: none;
+}
+
+.input, .modal, #description, #bank, #pointsTotal, #gameCounter, input, #solvePuzzle, input::placeholder, #keyboard {
+    color: rgb(255, 190, 55);
+}
+
+#begin, #points, #solve {
+    color: #43759f;
+    background-color: rgb(255, 190, 55);
+}
+
+#spin {
+    color: black;
+    background-color: red;
+}
+
+#bank, #gameCounter, input, #solvePuzzle, #pointsTotal {
+    background-color: #43759f;;
+}
+
+#begin, #spin {
+    border: 16px solid rgb(255, 190, 55);
+}
+
+#spin {
+    border: 16px solid red;
+}
+
+#begin, #spin, #points, #pointsTotal, #bank, #gameCounter {
+    text-shadow: none;
+}
+
+#begin, #spin {
+    margin: 10px auto 0;
+}
+
+#begin:active, #spin:active {
+    border-bottom: 18px solid rgb(255, 190, 55);
+    border-right: 18px solid rgb(255, 190, 55);
+    margin: 10px auto -2px;
+}
+
+.mainImage {
+    height: 114px;
+    margin: 0 auto 10px;
+}
+
+#points, #pointsTotal, #bank {
+    width: 33.333%
+}
+
+#solveInput {
+    font-size: 28px;
+    width: 80%;
+}
+
+#solvePuzzle {
+    font-size: 32px;
+    width: 18%;
+    margin-bottom: 4px;
+}
+
+#solve {
+    font-size: 0;
+}
+
+#solvePuzzle, #begin, #spin {
+    box-shadow: 2px 2px 4px black;
+}
+
+#solvePuzzle:active, #begin:active, #spin:active {
+    top: 2px;
+    left: 2px;
+    box-shadow: none;
+}
+
+input {
+    outline: none;
+}
+
+input::placeholder {
+    opacity: 0.7;
+}
+
+.display {
+    font-size: 32px;
+    padding: 4px 0;
+    border: 4px solid cyan;
+    border-bottom: none;
+}
+
+.display:last-of-type {
+    border-bottom: 4px solid cyan;
+}
+
+#bank, #points {
+    border-right: none;
+}
+
+nav {
+    font-size: 0px;
+}
+
+.keyrow {
+    width: 100%;
+    margin: 6px auto;
+}
+
+.key {
+    height: 56px;
+    line-height: 56px;
+    font-size: 32px;
+    width: 9.1%;
+    background: radial-gradient(circle, #43759f, rgba(34, 139, 34, 0.33));
+    border: 2px outset rgb(24, 24, 24);
+}
+
+#blankKey {
+    height: 0;
+    border: none;
+}
+
+.space {
+    width: 1%;
+}
+
+#keyboard {
+    display: none;
+}
+
+@media all and (max-width: 1214px) and (min-width: 1101px) {
+    .block {
+        width: 70px;
+        height: 87px;
+        line-height: 77px;
+    }
+
+    .corner {
+        width: 84px;
+        height: 101px;
+    }
+
+    .row {
+        font-size: 68px;
+    }
+}
+
+@media all and (max-width: 1100px) and (min-width: 1001px) {
+    .block {
+        width: 64px;
+        height: 80px;
+        line-height: 70px;
+    }
+
+    .corner {
+        width: 78px;
+        height: 94px;
+    }
+
+    .row {
+        font-size: 62px;
+    }
+}
+
+@media all and (max-width: 1000px) and (min-width: 901px) {
+    .block {
+        width: 57px;
+        height: 72px;
+        line-height: 62px;
+    }
+
+    .corner {
+        width: 71px;
+        height: 86px;
+    }
+
+    .row {
+        font-size: 55px;
+    }
+}
+
+@media all and (max-width: 900px) and (min-width: 801px) {
+    .block {
+        width: 50px;
+        height: 63px;
+        line-height: 53px;
+    }
+
+    .corner {
+        width: 64px;
+        height: 77px;
+    }
+
+    .row {
+        font-size: 47px;
+    }
+}
+
+@media all and (max-width: 800px) and (min-width: 701px) {
+    .block {
+        width: 43px;
+        height: 54px;
+        line-height: 48px;
+    }
+
+    .corner {
+        width: 51px;
+        height: 62px;
+    }
+
+    .row {
+        font-size: 42px;
+    }
+}
+
+@media all and (max-width: 700px) and (min-width: 641px) {
+    .block {
+        width: 39px;
+        height: 49px;
+        line-height: 43px;
+    }
+
+    .corner {
+        width: 47px;
+        height: 57px;
+    }
+
+    .row {
+        font-size: 38px;
+    }
+}
+
+@media all and (max-width: 640px) and (min-width: 581px) {
+    .block {
+        width: 36px;
+        height: 45px;
+        line-height: 39px;
+    }
+
+    .corner {
+        width: 44px;
+        height: 52px;
+    }
+
+    .row {
+        font-size: 34px;
+    }
+}
+
+@media all and (max-width: 580px) and (min-width: 521px) {
+    .block {
+        width: 32px;
+        height: 40px;
+        line-height: 34px;
+    }
+
+    .corner {
+        width: 40px;
+        height: 48px;
+    }
+
+    .row {
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width: 520px) and (min-width: 481px) {
+    .block {
+        width: 30px;
+        height: 38px;
+        line-height: 32px;
+    }
+
+    .corner {
+        width: 38px;
+        height: 46px;
+    }
+
+    .row {
+        font-size: 28px;
+    }
+}
+
+@media all and (max-width: 480px) and (min-width: 441px) {
+    .block {
+        width: 27px;
+        height: 34px;
+        line-height: 28px;
+    }
+
+    .corner {
+        width: 35px;
+        height: 42px;
+    }
+
+    .row {
+        font-size: 25px;
+    }
+}
+
+@media all and (max-width: 440px) and (min-width: 401px) {
+    .block {
+        width: 24px;
+        height: 30px;
+        line-height: 24px;
+    }
+
+    .corner {
+        width: 32px;
+        height: 38px;
+    }
+
+    .row {
+        font-size: 21px;
+    }
+}
+
+@media all and (max-width: 400px) and (min-width: 360px) {
+    .block {
+        width: 21px;
+        height: 27px;
+        line-height: 21px;
+    }
+
+    .corner {
+        width: 29px;
+        height: 35px;
+    }
+
+    .row {
+        font-size: 19px;
+    }
+}
+
+@media all and (max-width: 359px) {
+    .block {
+        width: 19px;
+        height: 24px;
+        line-height: 18px;
+    }
+
+    .corner {
+        width: 27px;
+        height: 32px;
+    }
+
+    .row {
+        font-size: 16px;
+    }
+}
+
+@media all and (max-width: 800px) {
+    #message, #round {
+        font-size: 32px;
+    }
+
+    .button {
+        font-size: 40px;
+    }
+
+    .info {
+        font-size: 24px;
+    }
+
+    #description, #input {
+        border: 6px solid cyan;
+        font-size: 30px;
+    }
+
+    #solveInput, #solvePuzzle, .display {
+        font-size: 16px;
+    }
+
+    .block {
+        margin: 0 1px;
+        border: 3px outset rgb(24, 24, 24);
+    }
+    #blockTopLeft, #blockTopRight, #row4 {
+        border-bottom: 6px solid cyan;
+    }
+
+    #blockBottomRight, #blockBottomLeft, #row1 {
+        border-top: 6px solid cyan;
+    }
+
+    #blockTopRight, #blockBottomRight, #row2, #row3 {
+        border-left: 6px solid cyan;
+    }
+
+    #blockBottomLeft, #blockTopLeft, #row2, #row3 {
+        border-right: 6px solid cyan;
+    }
+
+    #row2 {
+        padding-bottom: 1px;
+    }
+
+    #row3 {
+        padding-top: 1px;
+    }
+
+    #row1, #row2 {
+        padding-top: 2px;
+    }
+
+    #row3, #row4 {
+        padding-bottom: 2px;
+    }
+    #block0, #block12, #block26, #block40 {
+        margin-left: 2px;
+    }
+
+    #block11, #block25, #block39, #block51 {
+        margin-right: 2px;
+    }
+}
